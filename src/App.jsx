@@ -1,7 +1,6 @@
-
-
 import { useState } from 'react';
 import PokemonCard from './components/PokemonCard.jsx';
+import NavBar from './components/NavBar.jsx';
 
 function App() {
     const pokemonList = [
@@ -36,13 +35,12 @@ function App() {
                 imgSrc={pokemonList[pokemonIndex].imgSrc}
                 name={pokemonList[pokemonIndex].name}
             />
-            <button onClick={decrementCounter} className="moins1">Précédent</button>
-            <button onClick={incrementCounter} className="plus1">Suivant</button>
+            <NavBar
+                onPrevious={decrementCounter}
+                onNext={incrementCounter}
+            />
         </div>
     );
 }
 
 export default App;
-
-
-
