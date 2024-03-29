@@ -5,7 +5,7 @@ import NavBar from './components/NavBar.jsx';
 function App() {
     const pokemonList = [
         {
-            name: "bulbasaur",
+            name: "1",
             imgSrc: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
         },
         {
@@ -13,7 +13,7 @@ function App() {
             imgSrc: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
         },
         {
-            name: "2",
+            name: "3",
             imgSrc: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
         },
         {
@@ -29,6 +29,11 @@ function App() {
     const decrementCounter = () => {
         setPokemonIndex((prevIndex) => (prevIndex - 1 + pokemonList.length) % pokemonList.length);
     };
+
+    const selectClick = (index) => {
+        setPokemonIndex(index);
+    };
+
     return (
         <div className="App">
             <PokemonCard
@@ -38,6 +43,8 @@ function App() {
             <NavBar
                 onPrevious={decrementCounter}
                 onNext={incrementCounter}
+                pokemonList={pokemonList}
+                onPokemonClick={selectClick}
             />
         </div>
     );
