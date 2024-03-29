@@ -1,18 +1,19 @@
 import PropTypes from "prop-types";
 
 function NavBar({ onPrevious, onNext, pokemonList, onPokemonClick }) {
-
-
     const selectClick = (index) => {
         onPokemonClick(index);
     };
 
+
     return (
         <div className="buttons">
             <button onClick={onPrevious} className="moins1">Précédent</button>
-
             {pokemonList.map((pokemon, index) => (
-                <button key={index} onClick={() => selectClick(index)}>{pokemon.name}</button>
+                <button key={index} onClick={() => {
+                    selectClick(index);
+                    alert(pokemon.msg);
+                }}>{pokemon.name}</button>
             ))}
             <button onClick={onNext} className="plus1">Suivant</button>
         </div>
