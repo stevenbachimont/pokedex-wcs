@@ -2,9 +2,6 @@ import PropTypes from "prop-types";
 
 function PokemonCard({ imgSrc, name }) {
 
-
-
-
     return (
         <div className="pokemon-card">
             <figure>
